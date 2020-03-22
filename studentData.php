@@ -9,7 +9,10 @@
     <title>Econ Department Student Managemnt</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style type="text/css">
-        #second,#third,#fourth,#result{
+        #second,
+        #third,
+        #fourth,
+        #result {
             display: none;
         }
     </style>
@@ -18,11 +21,13 @@
 <body class="bg-dark">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-6 bg-light p-4 rounded mt-5">
+            <div class="col-md-6 bg-light p-4 rounded mt-4">
                 <h5 class="text-center text-light bg-success mb-2 p-2 rounded lead" id="result">Econ Dept Student Data Form</h5>
-                <!-- <div class="progress-bar bg-danger rounded mb-2" role="progressbar" style="width:40%;" id="progressBar">
-                    <b class="lead" id="progressText">Personal Information</b>
-                </div> -->
+                <div class="progress mb-3" style="height:40px;">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:40%;" id="progressBar">
+                        <b class="lead" id="progressText">Step-1</b>
+                    </div>
+                </div>
                 <form action="" method="post" id="form-data">
                     <div id="first">
                         <h4 class="text-center bg-primary p-1 rounded text-light">Personal Information</h4>
@@ -139,6 +144,7 @@
                     </div>
                     <div id="third">
                         <h4 class="text-center bg-primary p-1 rounded text-light">Education Information</h4>
+                        <h5 class="text-center bg-info rounded text-light">Advance Level Result</h5>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <input type="text" name="sub1" class="form-control" placeholder="Subject Name">
@@ -202,6 +208,28 @@
                     </div>
                     <div id="fourth">
                         <h4 class="text-center bg-primary p-1 rounded text-light">Future Goals</h4>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label class="form-control">Prospected Job Category</label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <select name="prosJobCat" class="form-control">
+                                    <option value="Government">Government</option>
+                                    <option value="Private">Private</option>
+                                    <option value="Self Employee">Self Employee</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="prosJobField" class="form-control" placeholder="Prospected Job Field">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="prosJob" class="form-control" placeholder="Prospected Job">
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="btn btn-danger" id="prev-4">Previous</a>
+                            
+                        </div>
                     </div>
                 </form>
             </div>
@@ -211,6 +239,52 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js" integrity="sha256-ugED92WALymbx9ylw12aADWaCrsQysE29DyvnAv5i3w=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#next-1").click(function(){
+                $("#second").show();
+                $("#first").hide();
+                $("#progressBar").css("width","60%");
+                $("#progressText").html("step-2");
+            })
+
+            $("#next-2").click(function(){
+                $("#second").hide();
+                $("#third").show();
+                $("#progressBar").css("width","80%");
+                $("#progressText").html("step-3");
+            })
+
+            $("#next-3").click(function(){
+                $("#third").hide();
+                $("#fourth").show();
+                $("#progressBar").css("width","100%");
+                $("#progressText").html("step-4");
+            })
+
+            $("#prev-2").click(function(){
+                $("#second").hide();
+                $("#first").show();
+                $("#progressBar").css("width","40%");
+                $("#progressText").html("step-1");
+            })
+
+            $("#prev-3").click(function(){
+                $("#second").show();
+                $("#third").hide();
+                $("#progressBar").css("width","60%");
+                $("#progressText").html("step-2");
+            })
+
+            $("#prev-4").click(function(){
+                $("#fourth").hide();
+                $("#third").show();
+                $("#progressBar").css("width","80%");
+                $("#progressText").html("step-3");
+            })
+        })
+    </script>
 </body>
 
 </html>
