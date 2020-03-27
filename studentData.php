@@ -14,8 +14,7 @@
         #fourth,
         #result {
             display: none;
-        }
-        
+        }       
     </style>
 </head>
 
